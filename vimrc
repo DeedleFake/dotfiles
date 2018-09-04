@@ -24,6 +24,7 @@ Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', {'do': 'npm install'}
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'heavenshell/vim-jsdoc', {'on': 'JsDoc'}
 
 " Colorschemes
 Plug 'tpope/vim-vividchalk'
@@ -70,6 +71,8 @@ let g:prettier#config#prose_wrap = 'preserve'
 let g:javascript_plugin_flow = 1
 
 let g:instant_markdown_autostart = 0
+
+let g:jsdoc_enable_es6 = 1
 
 nmap <F7> :GoCoverageToggle<CR>
 
