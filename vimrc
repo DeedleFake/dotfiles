@@ -25,6 +25,7 @@ Plug 'prettier/vim-prettier', {'do': 'npm install'}
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'heavenshell/vim-jsdoc', {'on': 'JsDoc'}
+Plug 'DeedleFake/vim-wdte'
 
 " Colorschemes
 Plug 'tpope/vim-vividchalk'
