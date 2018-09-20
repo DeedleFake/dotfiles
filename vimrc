@@ -10,7 +10,8 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'kien/ctrlp.vim', {'on': 'CtrlP'}
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
 Plug 'suan/vim-instant-markdown', {'on': 'InstantMarkdownPreview'}
 "Plug 'w0rp/ale'
@@ -29,6 +30,7 @@ Plug 'DeedleFake/vim-wdte'
 
 " Colorschemes
 Plug 'tpope/vim-vividchalk'
+Plug 'kristijanhusak/vim-hybrid-material'
 
 if !has('nvim')
 	Plug 'sjl/gundo.vim'
@@ -75,6 +77,14 @@ let g:instant_markdown_autostart = 0
 
 let g:jsdoc_enable_es6 = 1
 
+let g:enable_bold_font = 1
+let g:enable_italic_font = 1
+"let g:hybrid_transparent_background = 1
+colorscheme hybrid_material
+
+let g:airline_theme = "deus"
+let g:airline_powerline_fonts = 1
+
 nmap <F7> :GoCoverageToggle<CR>
 
 nmap <F5> :NERDTreeToggle<CR>
@@ -109,7 +119,7 @@ autocmd FileType text,markdown setlocal spell
 if has('gui_running')
 	set lines=40 columns=80
 	set guioptions-=m guioptions-=T
-	colorscheme vividchalk
+	"colorscheme vividchalk
 
 	if has('gui_win32')
 		set guifont=Go_Mono:h10:cANSI:qDRAFT
