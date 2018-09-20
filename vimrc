@@ -83,7 +83,7 @@ let g:enable_italic_font = 1
 colorscheme hybrid_material
 
 let g:airline_theme = "deus"
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 
 nmap <F7> :GoCoverageToggle<CR>
 
