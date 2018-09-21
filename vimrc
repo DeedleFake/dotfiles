@@ -79,7 +79,10 @@ let g:jsdoc_enable_es6 = 1
 
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
-"let g:hybrid_transparent_background = 1
+
+if !has('macunix') && !has('gui_running')
+	let g:hybrid_transparent_background = 1
+endif
 
 if has('win32') && !has('gui_running')
 	colorscheme darkblue
