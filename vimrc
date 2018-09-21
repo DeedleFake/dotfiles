@@ -84,11 +84,7 @@ if !has('macunix') && !has('gui_running')
 	let g:hybrid_transparent_background = 1
 endif
 
-if has('win32') && !has('gui_running')
-	colorscheme darkblue
-else
-	colorscheme hybrid_material
-endif
+colorscheme hybrid_material
 
 let g:airline_theme = "deus"
 "let g:airline_powerline_fonts = 1
