@@ -1,6 +1,6 @@
 if !has('win32')
 	set shell=bash
-end
+endif
 
 call plug#begin()
 
@@ -80,7 +80,12 @@ let g:jsdoc_enable_es6 = 1
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 "let g:hybrid_transparent_background = 1
-colorscheme hybrid_material
+
+if has('win32')
+	colorscheme darkblue
+else
+	colorscheme hybrid_material
+endif
 
 let g:airline_theme = "deus"
 "let g:airline_powerline_fonts = 1
