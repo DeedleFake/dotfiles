@@ -13,7 +13,8 @@ Plug 'kien/ctrlp.vim', {'on': 'CtrlP'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
-Plug 'suan/vim-instant-markdown', {'on': 'InstantMarkdownPreview'}
+"Plug 'suan/vim-instant-markdown', {'on': 'InstantMarkdownPreview'}
+Plug 'shime/vim-livedown', {'on': 'LivedownToggle'}
 "Plug 'w0rp/ale'
 
 " Syntaxes and Filetypes
