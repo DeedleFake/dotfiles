@@ -24,6 +24,7 @@ Plug 'cespare/vim-toml'
 "Plug 'tpope/vim-scriptease'
 Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', {'do': 'npm install'}
+Plug 'flowtype/vim-flow'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'heavenshell/vim-jsdoc', {'on': 'JsDoc'}
@@ -71,6 +72,8 @@ let g:prettier#config#trailing_comma = 'all' " none
 let g:prettier#config#parser = 'flow' " babylon
 let g:prettier#config#config_precedence = 'prefer-file'
 let g:prettier#config#prose_wrap = 'preserve'
+
+let g:flow#autoclose = 1
 
 let g:javascript_plugin_flow = 1
 
