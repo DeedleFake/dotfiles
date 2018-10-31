@@ -24,7 +24,7 @@ Plug 'cespare/vim-toml'
 "Plug 'tpope/vim-scriptease'
 Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', {'do': 'npm install'}
-Plug 'flowtype/vim-flow'
+"Plug 'flowtype/vim-flow'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'heavenshell/vim-jsdoc', {'on': 'JsDoc'}
