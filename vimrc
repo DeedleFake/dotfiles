@@ -16,6 +16,7 @@ Plug 'easymotion/vim-easymotion'
 "Plug 'suan/vim-instant-markdown', {'on': 'InstantMarkdownPreview'}
 Plug 'shime/vim-livedown', {'on': 'LivedownToggle'}
 "Plug 'w0rp/ale'
+Plug 'nathanaelkane/vim-indent-guides'
 
 " Syntaxes and Filetypes
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
@@ -29,6 +30,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'heavenshell/vim-jsdoc', {'on': 'JsDoc'}
 Plug 'DeedleFake/vim-wdte'
+Plug 'jparise/vim-graphql'
 
 " Colorschemes
 Plug 'tpope/vim-vividchalk'
@@ -81,6 +83,8 @@ let g:javascript_plugin_flow = 1
 let g:instant_markdown_autostart = 0
 
 let g:jsdoc_enable_es6 = 1
+
+let g:indent_guides_enable_on_vim_startup = 1
 
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
