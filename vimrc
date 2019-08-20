@@ -16,7 +16,7 @@ Plug 'easymotion/vim-easymotion'
 "Plug 'suan/vim-instant-markdown', {'on': 'InstantMarkdownPreview'}
 Plug 'shime/vim-livedown', {'on': 'LivedownToggle'}
 "Plug 'w0rp/ale'
-"Plug 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
 
 " Syntaxes and Filetypes
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
@@ -98,10 +98,11 @@ let g:enable_italic_font = 1
 let g:airline_theme = "deus"
 "let g:airline_powerline_fonts = 1
 
-nmap <F7> :GoCoverageToggle<CR>
-
 nmap <F5> :NERDTreeToggle<CR>
 nmap <C-P> :CtrlP<CR>
+
+nmap <F7> :GoCoverageToggle<CR>
+nmap <F8> :IndentGuidesToggle<CR>
 
 nmap J gT
 nmap K gt
