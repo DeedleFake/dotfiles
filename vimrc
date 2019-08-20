@@ -34,7 +34,7 @@ Plug 'jparise/vim-graphql'
 
 " Colorschemes
 Plug 'tpope/vim-vividchalk'
-Plug 'kristijanhusak/vim-hybrid-material'
+"Plug 'kristijanhusak/vim-hybrid-material'
 
 if !has('nvim')
 	Plug 'sjl/gundo.vim'
@@ -89,11 +89,11 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 
-if !has('macunix') && !has('gui_running')
-	let g:hybrid_transparent_background = 1
-endif
-
-colorscheme hybrid_material
+"if !has('macunix') && !has('gui_running')
+"	let g:hybrid_transparent_background = 1
+"endif
+"
+"colorscheme hybrid_material
 
 let g:airline_theme = "deus"
 "let g:airline_powerline_fonts = 1
