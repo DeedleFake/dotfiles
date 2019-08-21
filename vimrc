@@ -33,8 +33,9 @@ Plug 'DeedleFake/vim-wdte'
 Plug 'jparise/vim-graphql'
 
 " Colorschemes
-Plug 'tpope/vim-vividchalk'
+"Plug 'tpope/vim-vividchalk'
 "Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'hzchirs/vim-material'
 
 if !has('nvim')
 	Plug 'sjl/gundo.vim'
@@ -134,6 +135,7 @@ if has('gui_running')
 	set lines=40 columns=80
 	set guioptions-=m guioptions-=T
 	"colorscheme vividchalk
+	colorscheme vim-material
 
 	if has('gui_win32')
 		set guifont=Go_Mono:h10:cANSI:qDRAFT
