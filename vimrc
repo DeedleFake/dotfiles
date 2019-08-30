@@ -57,6 +57,7 @@ set scrolloff=6
 set hlsearch
 set nottimeout
 set encoding=utf-8
+set relativenumber
 
 let &directory = split(&rtp, ',')[0] . '/swap,' . &directory
 
