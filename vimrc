@@ -32,6 +32,7 @@ Plug 'heavenshell/vim-jsdoc', {'on': 'JsDoc'}
 Plug 'DeedleFake/vim-wdte'
 Plug 'jparise/vim-graphql'
 Plug 'LnL7/vim-nix'
+Plug 'udalov/kotlin-vim'
 
 " Colorschemes
 "Plug 'tpope/vim-vividchalk'
