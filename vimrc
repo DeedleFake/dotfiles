@@ -19,7 +19,7 @@ Plug 'shime/vim-livedown', {'on': 'LivedownToggle'}
 Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
 
 " Syntaxes and Filetypes
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries', 'tag': '*'}
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 "Plug 'tpope/vim-scriptease'
