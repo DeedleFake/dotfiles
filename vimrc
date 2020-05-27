@@ -17,6 +17,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'shime/vim-livedown', {'on': 'LivedownToggle'}
 "Plug 'w0rp/ale'
 Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
+Plug 'junegunn/fzf', {'on': 'FZF'}
 
 " Syntaxes and Filetypes
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries', 'tag': '*'}
@@ -104,6 +105,7 @@ let g:airline_theme = "deus"
 
 nmap <F5> :NERDTreeToggle<CR>
 nmap <C-P> :CtrlP<CR>
+nmap <C-F> :FZF<CR>
 
 nmap <F7> :GoCoverageToggle<CR>
 nmap <F8> :IndentGuidesToggle<CR>
