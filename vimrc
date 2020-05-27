@@ -9,7 +9,7 @@ Plug 'tpope/vim-sensible'
 " Plugins
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'kien/ctrlp.vim', {'on': 'CtrlP'}
+"Plug 'kien/ctrlp.vim', {'on': 'CtrlP'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
@@ -104,7 +104,7 @@ let g:airline_theme = "deus"
 "let g:airline_powerline_fonts = 1
 
 nmap <F5> :NERDTreeToggle<CR>
-nmap <C-P> :CtrlP<CR>
+"nmap <C-P> :CtrlP<CR>
 nmap <C-F> :FZF<CR>
 
 nmap <F7> :GoCoverageToggle<CR>
