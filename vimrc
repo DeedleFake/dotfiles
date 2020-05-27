@@ -17,7 +17,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'shime/vim-livedown', {'on': 'LivedownToggle'}
 "Plug 'w0rp/ale'
 Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
-Plug 'junegunn/fzf', {'on': 'FZF'}
+Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 
 " Syntaxes and Filetypes
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries', 'tag': '*'}
