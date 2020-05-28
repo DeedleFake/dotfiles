@@ -108,7 +108,7 @@ let g:airline_theme = "deus"
 
 nmap <F5> :NERDTreeToggle<CR>
 "nmap <C-P> :CtrlP<CR>
-nmap <Leader>f :FZF<CR>
+nmap <C-T> :FZF<CR>
 
 nmap <F7> :GoCoverageToggle<CR>
 nmap <F8> :IndentGuidesToggle<CR>
