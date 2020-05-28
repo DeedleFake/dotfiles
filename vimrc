@@ -36,10 +36,11 @@ Plug 'LnL7/vim-nix'
 Plug 'udalov/kotlin-vim'
 
 " Colorschemes
-"Plug 'tpope/vim-vividchalk'
-"Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'tpope/vim-vividchalk'
+Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'hzchirs/vim-material'
 Plug 'junegunn/seoul256.vim'
+Plug 'NLKNguyen/papercolor-theme'
 
 if !has('nvim')
 	Plug 'sjl/gundo.vim'
@@ -98,10 +99,8 @@ let g:enable_italic_font = 1
 "if !has('macunix') && !has('gui_running')
 "	let g:hybrid_transparent_background = 1
 "endif
-"
-"colorscheme hybrid_material
 
-colorscheme seoul256-light
+colorscheme seoul256
 
 let g:airline_theme = "deus"
 "let g:airline_powerline_fonts = 1
