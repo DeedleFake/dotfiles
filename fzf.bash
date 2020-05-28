@@ -1,6 +1,6 @@
 _fzf_previewer="cat {}"
 [ -x "$(which chroma)" ] && _fzf_previewer="chroma -s github {}"
-export FZF_DEFAULT_OPTS="--info inline --tabstop=2 --preview='$_fzf_previewer'"
+export FZF_DEFAULT_OPTS="--info inline --tabstop 2 --bind 'ctrl-e:execute(vim -p {+})' --preview '$_fzf_previewer'"
 unset _fzf_previewer
 
 fzf-cd() {
@@ -44,7 +44,7 @@ if [ -x "$(which ipfs)" ]; then
 	fzf-ipfs() {
 		case "$1" in
 			pins)
-				ipfs pin ls -t recursive | cut -d ' ' -f 1 | fzf --multi --preview='_ipfs_catls {}'
+				ipfs pin ls -t recursive | cut -d ' ' -f 1 | fzf --multi --preview '_ipfs_catls {}'
 				;;
 
 			*)
