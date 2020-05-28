@@ -1,4 +1,4 @@
-export FZF_DEFAULT_OPTS="--info inline --preview='chroma -s github {}'"
+export FZF_DEFAULT_OPTS="--info inline --tabstop=2 --preview='chroma -s github {}'"
 
 if ! [ -x "$(which chroma)" ]; then
 	chroma() {
