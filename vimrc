@@ -39,6 +39,7 @@ Plug 'udalov/kotlin-vim'
 "Plug 'tpope/vim-vividchalk'
 "Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'hzchirs/vim-material'
+Plug 'junegunn/seoul256.vim'
 
 if !has('nvim')
 	Plug 'sjl/gundo.vim'
@@ -100,6 +101,8 @@ let g:enable_italic_font = 1
 "
 "colorscheme hybrid_material
 
+colorscheme seoul256-light
+
 let g:airline_theme = "deus"
 "let g:airline_powerline_fonts = 1
 
@@ -140,7 +143,7 @@ if has('gui_running')
 	set lines=40 columns=80
 	set guioptions-=m guioptions-=T
 	"colorscheme vividchalk
-	colorscheme vim-material
+	"colorscheme vim-material
 
 	if has('gui_win32')
 		set guifont=Go_Mono:h10:cANSI:qDRAFT
