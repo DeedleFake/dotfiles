@@ -1,15 +1,24 @@
-export FZF_DEFAULT_OPTS="--info inline --tabstop=2 --preview='chroma -s github {}'"
+_fzf_previewer="cat {}"
+[ -x "$(which chroma)" ] && _fzf_previewer="chroma -s github {}"
+export FZF_DEFAULT_OPTS="--info inline --tabstop=2 --preview='$_fzf_previewer'"
+unset _fzf_previewer
 
-if ! [ -x "$(which chroma)" ]; then
-	chroma() {
-		cat "$3"
-	}
-fi
+fzf-cd() {
+	local root="$1"
+	local clean="cat"
+	if [ -z "$root" ]; then
+		root="."
+		clean="cut -c3- | sed '/^$/d'"
+	fi
+
+	local dir="$(find "$root" -type d | eval "$clean" | fzf --preview='ls -al --color=always {}')"
+	cd "$dir"
+}
 
 if [ -x "$(which brew)" ]; then
 	fzf-brew() {
 		case "$1" in
-			list|search)
+			local|remote)
 				brew "$1" | fzf --multi --preview='brew info {}'
 				;;
 
@@ -34,8 +43,8 @@ if [ -x "$(which ipfs)" ]; then
 
 	fzf-ipfs() {
 		case "$1" in
-			unpin)
-				ipfs pin ls -t recursive | cut -d ' ' -f 1 | fzf --multi --preview='_ipfs_catls {}' | xargs ipfs pin rm
+			pins)
+				ipfs pin ls -t recursive | cut -d ' ' -f 1 | fzf --multi --preview='_ipfs_catls {}'
 				;;
 
 			*)
