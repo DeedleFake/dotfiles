@@ -5,21 +5,23 @@ unset _fzf_previewer
 
 fzf-cd() {
 	local root="$1"
-	local clean="cat"
 	if [ -z "$root" ]; then
 		root="."
-		clean="cut -c3- | sed '/^$/d'"
 	fi
 
-	local dir="$(find "$root" -type d | eval "$clean" | fzf --preview='ls -al --color=always {}')"
+	local dir="$(fd -H -t d "$root" | fzf --preview='ls -al --color=always {}')"
 	cd "$dir"
 }
 
 if [ -x "$(which brew)" ]; then
 	fzf-brew() {
 		case "$1" in
-			local|remote)
-				brew "$1" | fzf --multi --preview='brew info {}'
+			local)
+				brew list | fzf --multi --preview='brew info {}'
+				;;
+
+			remote)
+				brew search | fzf --multi --preview='brew info {}'
 				;;
 
 			*)
