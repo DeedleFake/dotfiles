@@ -9,8 +9,8 @@ fi
 if [ -x "$(which brew)" ]; then
 	fzf-brew() {
 		case "$1" in
-			uninstall)
-				brew list | fzf --multi --preview='brew info {}' | xargs brew uninstall
+			list|search)
+				brew "$1" | fzf --multi --preview='brew info {}'
 				;;
 
 			*)
