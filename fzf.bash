@@ -31,6 +31,20 @@ if [ -x "$(which brew)" ]; then
 	}
 fi
 
+if [ -x "$(which apt)" ]; then
+	fzf-apt() {
+		case "$1" in
+			remote)
+				apt-cache search .* | fzf --multi --preview 'echo {} | cut -d " " -f 1 | xargs apt-cache show' | cut -d ' ' -f 1
+				;;
+
+			*)
+				echo "Unknown command: $1" > /dev/stderr
+				return 2
+		esac
+	}
+fi
+
 if [ -x "$(which ipfs)" ]; then
 	_ipfs_catls() {
 		local out
