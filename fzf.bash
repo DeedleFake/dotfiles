@@ -1,5 +1,5 @@
 _fzf_previewer="cat {}"
-[ -x "$(which chroma)" ] && _fzf_previewer="chroma -s github {}"
+[ -x "$(which chroma)" ] && _fzf_previewer="chroma -f terminal256 -s monokai {}"
 export FZF_DEFAULT_OPTS="--info inline --tabstop 2 --bind 'ctrl-e:execute(vim -p {+})' --preview '$_fzf_previewer'"
 unset _fzf_previewer
 
