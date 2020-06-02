@@ -5,11 +5,15 @@ unset _fzf_previewer
 
 fzf-cd() {
 	local root="$1"
+	[ -z "$root" ] && root="."
 	if [ -z "$root" ]; then
 		root="."
 	fi
 
-	local dir="$(fd -H -t d "$root" | fzf --preview='ls -al --color=always {}')"
+	local find="find \"$root\" -type d"
+	[ -x "$(which fd)" ] && find="fd -H -t d \"$root\" | tail -n +2"
+
+	local dir="$(eval "$find" | fzf --preview='ls -al --color=always {}')"
 	cd "$dir"
 }
 
