@@ -69,6 +69,7 @@ let &directory = split(&rtp, ',')[0] . '/swap,' . &directory
 let g:go_fmt_command = 'goimports'
 "let g:go_fmt_options = '-s'
 let g:go_version_warning = 0
+let g:go_rename_command = 'gopls'
 
 let g:prettier#config#print_width = 80 " 80
 let g:prettier#config#tab_width = 2 " 2
