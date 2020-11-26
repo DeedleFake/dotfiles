@@ -37,6 +37,7 @@ Plug 'udalov/kotlin-vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'Quramy/tsuquyomi'
+Plug 'tikhomirov/vim-glsl'
 
 " Colorschemes
 Plug 'tpope/vim-vividchalk'
