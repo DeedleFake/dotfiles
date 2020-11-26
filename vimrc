@@ -34,6 +34,9 @@ Plug 'DeedleFake/vim-wdte'
 Plug 'jparise/vim-graphql'
 Plug 'LnL7/vim-nix'
 Plug 'udalov/kotlin-vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'Quramy/tsuquyomi'
 
 " Colorschemes
 Plug 'tpope/vim-vividchalk'
