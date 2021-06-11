@@ -38,6 +38,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'Quramy/tsuquyomi'
 Plug 'tikhomirov/vim-glsl'
+Plug 'hashivim/vim-terraform'
 
 " Colorschemes
 Plug 'tpope/vim-vividchalk'
