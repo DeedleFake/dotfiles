@@ -7,4 +7,6 @@ export EDITOR=vim
 
 [ -x "$(which fzf)" ] && . "$_dir/fzf.bash"
 
+[ -x "$(which rbenv)" ] && eval "$(rbenv init -)"
+
 unset _dir
