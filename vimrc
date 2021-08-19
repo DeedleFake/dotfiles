@@ -8,15 +8,15 @@ Plug 'tpope/vim-sensible'
 
 " Plugins
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+"Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 "Plug 'kien/ctrlp.vim', {'on': 'CtrlP'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
 "Plug 'suan/vim-instant-markdown', {'on': 'InstantMarkdownPreview'}
-Plug 'shime/vim-livedown', {'on': 'LivedownToggle'}
+"Plug 'shime/vim-livedown', {'on': 'LivedownToggle'}
 "Plug 'w0rp/ale'
-Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
+"Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 
 " Syntaxes and Filetypes
