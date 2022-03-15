@@ -142,7 +142,7 @@ autocmd BufReadPost * setlocal fo-=r fo-=o fo-=c
 
 autocmd FileType * setlocal fo-=r fo-=o fo-=c
 autocmd FileType python setlocal ts=4 sw=4 et
-autocmd FileType rust setlocal ts=2 sw=2 noet
+autocmd FileType rust,ruby setlocal ts=2 sw=2 noet
 autocmd FileType text,markdown setlocal spell
 
 if has('gui_running')
