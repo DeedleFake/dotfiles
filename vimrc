@@ -20,7 +20,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 
 " Syntaxes and Filetypes
-Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries', 'tag': '*'}
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'} ", 'tag': '*'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 "Plug 'tpope/vim-scriptease'
