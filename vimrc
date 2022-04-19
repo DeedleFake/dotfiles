@@ -18,6 +18,8 @@ Plug 'easymotion/vim-easymotion'
 "Plug 'w0rp/ale'
 "Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'mattn/vim-lsp-settings'
 
 " Syntaxes and Filetypes
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'} ", 'tag': '*'
@@ -50,6 +52,11 @@ Plug 'NLKNguyen/papercolor-theme'
 
 if !has('nvim')
 	Plug 'sjl/gundo.vim'
+endif
+
+if has('nvim')
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'ms-jpq/coq_nvim', {'branch': 'coq', 'do': ':COQdeps'}
 endif
 
 call plug#end()
@@ -128,6 +135,17 @@ endif
 
 if !has('nvim')
 	nmap <F6> :GundoToggle<CR>
+endif
+
+if has('nvim')
+	let g:coq_settings = {'auto_start': 'shut-up'}
+
+lua << EOF
+	local lsp = require'lspconfig'
+	lsp.gopls.setup{}
+	lsp.solargraph.setup{}
+	lsp.dartls.setup{}
+EOF
 endif
 
 "function OmniMap()
