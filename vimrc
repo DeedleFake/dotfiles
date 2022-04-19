@@ -8,30 +8,18 @@ Plug 'tpope/vim-sensible'
 
 " Plugins
 Plug 'tpope/vim-fugitive'
-"Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-"Plug 'kien/ctrlp.vim', {'on': 'CtrlP'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
-"Plug 'suan/vim-instant-markdown', {'on': 'InstantMarkdownPreview'}
-"Plug 'shime/vim-livedown', {'on': 'LivedownToggle'}
-"Plug 'w0rp/ale'
-"Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'mattn/vim-lsp-settings'
 
 " Syntaxes and Filetypes
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'} ", 'tag': '*'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
-"Plug 'tpope/vim-scriptease'
-"Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', {'do': 'npm install'}
-"Plug 'flowtype/vim-flow'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-"Plug 'heavenshell/vim-jsdoc', {'on': 'JsDoc'}
 Plug 'DeedleFake/vim-wdte'
 Plug 'jparise/vim-graphql'
 Plug 'LnL7/vim-nix'
@@ -105,8 +93,6 @@ let g:instant_markdown_autostart = 0
 
 let g:jsdoc_enable_es6 = 1
 
-"let g:indent_guides_enable_on_vim_startup = 1
-
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 
@@ -119,8 +105,6 @@ colorscheme seoul256
 let g:airline_theme = "deus"
 "let g:airline_powerline_fonts = 1
 
-nmap <F5> :NERDTreeToggle<CR>
-"nmap <C-P> :CtrlP<CR>
 nmap <Leader>t :FZF<CR>
 
 nmap <F7> :GoCoverageToggle<CR>
@@ -147,14 +131,6 @@ lua << EOF
 	lsp.dartls.setup{}
 EOF
 endif
-
-"function OmniMap()
-"	if &omnifunc
-"		inoremap <buffer> <silent> . .<C-X><C-O>
-"	endif
-"endfunction
-
-"autocmd BufReadPost * call OmniMap()
 
 autocmd BufReadPost * setlocal fo-=r fo-=o fo-=c
 
