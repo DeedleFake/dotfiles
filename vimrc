@@ -38,9 +38,7 @@ Plug 'hzchirs/vim-material'
 Plug 'junegunn/seoul256.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
-if !has('nvim')
-	Plug 'sjl/gundo.vim'
-endif
+Plug 'mbbill/undotree'
 
 if has('nvim')
 	Plug 'neovim/nvim-lspconfig'
@@ -107,6 +105,7 @@ let g:airline_theme = "deus"
 
 nmap <Leader>t :FZF<CR>
 
+nmap <F6> :UndotreeToggle<CR>
 nmap <F7> :GoCoverageToggle<CR>
 nmap <F8> :IndentGuidesToggle<CR>
 
@@ -115,10 +114,6 @@ nmap K gt
 
 if $TERM == "screen"
 	let $TERM = "xterm-256"
-endif
-
-if !has('nvim')
-	nmap <F6> :GundoToggle<CR>
 endif
 
 if has('nvim')
