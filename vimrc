@@ -121,13 +121,20 @@ if has('nvim')
 
 lua << EOF
 	local lsp = require'lspconfig'
+
+	lsp.vimls.setup{}
+
 	lsp.gopls.setup{}
 	lsp.solargraph.setup{}
 	lsp.dartls.setup{}
 	lsp.rust_analyzer.setup{}
-	lsp.svelte.setup{}
+
 	lsp.graphql.setup{}
-	lsp.vimls.setup{}
+
+	lsp.html.setup{}
+	lsp.css.setup{}
+	lsp.eslint.setup{}
+	lsp.svelte.setup{}
 EOF
 endif
 
