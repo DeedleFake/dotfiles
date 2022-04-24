@@ -124,6 +124,10 @@ lua << EOF
 	lsp.gopls.setup{}
 	lsp.solargraph.setup{}
 	lsp.dartls.setup{}
+	lsp.rust_analyzer.setup{}
+	lsp.svelte.setup{}
+	lsp.graphql.setup{}
+	lsp.vimls.setup{}
 EOF
 endif
 
@@ -131,7 +135,7 @@ autocmd BufReadPost * setlocal fo-=r fo-=o fo-=c
 
 autocmd FileType * setlocal fo-=r fo-=o fo-=c
 autocmd FileType python setlocal ts=4 sw=4 et
-autocmd FileType rust,ruby setlocal ts=2 sw=2 noet
+autocmd FileType ruby setlocal ts=2 sw=2 noet
 autocmd FileType text,markdown setlocal spell
 
 if has('gui_running')
