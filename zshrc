@@ -75,12 +75,20 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
 export LESS=-R
 
+PLUGIN_DIR=/usr/share/zsh/plugins
 
-## Plugins section: Enable fish style features
-# Use syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# Use history substring search
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+function load_plugin {
+	local path="$PLUGIN_DIR/$1/$1.zsh"
+	if [ -f "$path" ]; then
+		source "$path"
+	else
+		echo "Plugin not found: $path" >> /dev/stderr
+	fi
+}
+
+load_plugin zsh-syntax-highlighting                        # Use syntax highlighting
+load_plugin zsh-history-substring-search                   # Use history substring search
+
 # bind UP and DOWN arrow keys to history substring search
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
