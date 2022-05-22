@@ -132,7 +132,6 @@ lua << EOF
 	lsp.graphql.setup{}
 
 	lsp.html.setup{}
-	lsp.css.setup{}
 	lsp.eslint.setup{}
 	lsp.svelte.setup{}
 EOF
