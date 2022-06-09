@@ -79,7 +79,7 @@ PLUGIN_DIR=/usr/share/zsh/plugins
 
 function load_plugin {
 	local path="$PLUGIN_DIR/$1/$1.zsh"
-	if [ -f "$path" ]; then
+	if [ -r "$path" ]; then
 		source "$path"
 	else
 		echo "Plugin not found: $path" >> /dev/stderr
@@ -88,6 +88,7 @@ function load_plugin {
 
 load_plugin zsh-syntax-highlighting                        # Use syntax highlighting
 load_plugin zsh-history-substring-search                   # Use history substring search
+load_plugin zsh-autosuggestions
 
 # bind UP and DOWN arrow keys to history substring search
 zmodload zsh/terminfo
@@ -206,3 +207,7 @@ add-zsh-hook preexec mzc_termsupport_preexec
 export LS_OPTIONS='--color=auto'
 eval "$(dircolors -b)"
 alias ls='ls $LS_OPTIONS'
+
+if [ -r "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme" ]; then
+	source "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme"
+fi
