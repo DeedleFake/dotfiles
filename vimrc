@@ -31,6 +31,7 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'hashivim/vim-terraform'
 Plug 'evanleck/vim-svelte'
 Plug 'weakish/rcshell.vim'
+Plug 'DeedleFake/mkfile.vim'
 
 " Colorschemes
 Plug 'tpope/vim-vividchalk'
