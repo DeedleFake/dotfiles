@@ -39,6 +39,7 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'hzchirs/vim-material'
 Plug 'junegunn/seoul256.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
 
 Plug 'mbbill/undotree'
 
