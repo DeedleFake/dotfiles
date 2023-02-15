@@ -211,3 +211,7 @@ alias ls='ls $LS_OPTIONS'
 if [ -r "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme" ]; then
 	source "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme"
 fi
+
+if [ -r "/usr/share/nvm/init-nvm.sh" ]; then
+	source /usr/share/nvm/init-nvm.sh
+fi
