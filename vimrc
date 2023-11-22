@@ -12,6 +12,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
+Plug 'Shougo/vimproc.vim', {'do': ':VimProcInstall' }
 
 " Syntaxes and Filetypes
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'} ", 'tag': '*'
