@@ -33,6 +33,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'evanleck/vim-svelte'
 Plug 'weakish/rcshell.vim'
 Plug 'DeedleFake/mkfile.vim'
+Plug 'joerdav/templ.vim'
 
 " Colorschemes
 Plug 'tpope/vim-vividchalk'
