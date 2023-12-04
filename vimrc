@@ -34,6 +34,7 @@ Plug 'evanleck/vim-svelte'
 Plug 'weakish/rcshell.vim'
 Plug 'DeedleFake/mkfile.vim'
 Plug 'joerdav/templ.vim'
+Plug 'elixir-editors/vim-elixir'
 
 " Colorschemes
 Plug 'tpope/vim-vividchalk'
