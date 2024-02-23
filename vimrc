@@ -48,7 +48,7 @@ Plug 'mbbill/undotree'
 
 if has('nvim')
 	Plug 'neovim/nvim-lspconfig'
-	Plug 'ms-jpq/coq_nvim', {'branch': 'coq', 'do': ':COQdeps'}
+	"Plug 'ms-jpq/coq_nvim', {'branch': 'coq', 'do': ':COQdeps'}
 endif
 
 call plug#end()
@@ -126,7 +126,7 @@ if has('nvim')
 	let g:coq_settings = {'auto_start': 'shut-up'}
 
 lua << EOF
-	local lsp = require'lspconfig'
+	local lsp = require 'lspconfig'
 
 	lsp.vimls.setup{}
 
@@ -141,6 +141,9 @@ lua << EOF
 	--lsp.css.setup{}
 	lsp.eslint.setup{}
 	lsp.svelte.setup{}
+	lsp.elixirls.setup{
+		cmd = {"/usr/lib/elixir-ls/language_server.sh"};
+	}
 EOF
 endif
 
