@@ -131,7 +131,7 @@ lua << EOF
 	lsp.vimls.setup{}
 
 	lsp.gopls.setup{}
-	lsp.solargraph.setup{}
+	lsp.ruby_ls.setup{}
 	lsp.dartls.setup{}
 	lsp.rust_analyzer.setup{}
 
