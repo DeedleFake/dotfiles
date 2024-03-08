@@ -134,6 +134,7 @@ lua << EOF
 	lsp.ruby_ls.setup{}
 	lsp.dartls.setup{}
 	lsp.rust_analyzer.setup{}
+	lsp.zls.setup{}
 
 	lsp.graphql.setup{}
 
