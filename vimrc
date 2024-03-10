@@ -35,6 +35,7 @@ Plug 'weakish/rcshell.vim'
 Plug 'DeedleFake/mkfile.vim'
 Plug 'joerdav/templ.vim'
 Plug 'elixir-editors/vim-elixir'
+Plug 'gleam-lang/gleam.vim'
 
 " Colorschemes
 Plug 'tpope/vim-vividchalk'
@@ -135,6 +136,7 @@ lua << EOF
 	lsp.dartls.setup{}
 	lsp.rust_analyzer.setup{}
 	lsp.zls.setup{}
+	lsp.gleam.setup{}
 
 	lsp.graphql.setup{}
 
