@@ -13,6 +13,7 @@ setopt   histignorealldups                                        # If a new com
 unsetopt autocd                                                   # if only directory path is entered, cd there.
 setopt   inc_append_history                                       # save commands are added to the history immediately, otherwise only when shell exits.
 setopt   histignorespace                                          # Don't save commands that start with space
+setopt globstarshort
 
 #zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
