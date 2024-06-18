@@ -25,7 +25,7 @@ HISTFILE=~/.zhistory
 HISTSIZE=10000
 SAVEHIST=10000
 WORDCHARS="${WORDCHARS//\/[&.;]}"                                 # Don't consider certain characters part of the word
-WORDCHARS="${WORDCHARS//[\/.-]/}"
+WORDCHARS="${WORDCHARS//[\/.-_]/}"
 
 ## Keybindings section
 bindkey -e
