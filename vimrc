@@ -37,6 +37,7 @@ Plug 'DeedleFake/mkfile.vim'
 Plug 'joerdav/templ.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'gleam-lang/gleam.vim'
+Plug 'ChrisWellsWood/roc.vim'
 
 " Colorschemes
 Plug 'tpope/vim-vividchalk'
