@@ -152,6 +152,7 @@ lua << EOF
 	local nvim_treesitter_config = require 'nvim-treesitter.configs'
 	nvim_treesitter_config.setup {
 		highlight = { enable = true },
+		ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
 		--incremental_selection = {
 		--	enable = true,
 		--	keymaps = {
