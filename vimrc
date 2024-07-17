@@ -135,6 +135,7 @@ lua << EOF
 
 	lsp.gopls.setup{}
 	lsp.ruby_lsp.setup{}
+	lsp.sorbet.setup{}
 	lsp.dartls.setup{}
 	lsp.rust_analyzer.setup{}
 	lsp.zls.setup{}
