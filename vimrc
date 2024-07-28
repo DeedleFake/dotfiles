@@ -15,7 +15,7 @@ Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 Plug 'Shougo/vimproc.vim', {'do': ':VimProcInstall' }
 
 " Syntaxes and Filetypes
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'} ", 'tag': '*'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
@@ -135,7 +135,9 @@ lua << EOF
 
 	lsp.gopls.setup{}
 	lsp.ruby_lsp.setup{}
-	lsp.sorbet.setup{}
+	--lsp.sorbet.setup{
+	--	cmd = {"bundle", "exec", "srb", "tc", "--lsp"};
+	--}
 	lsp.dartls.setup{}
 	lsp.rust_analyzer.setup{}
 	lsp.zls.setup{}
@@ -151,20 +153,20 @@ lua << EOF
 		cmd = {"/usr/lib/elixir-ls/language_server.sh"};
 	}
 
-	local nvim_treesitter_config = require 'nvim-treesitter.configs'
-	nvim_treesitter_config.setup {
-		highlight = { enable = true },
-		ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
-		--incremental_selection = {
-		--	enable = true,
-		--	keymaps = {
-		--		init_selection = "gnn", -- set to `false` to disable one of the mappings
-		--		node_incremental = "grn",
-		--		scope_incremental = "grc",
-		--		node_decremental = "grm",
-		--	},
-		--},
-	}
+	--local nvim_treesitter_config = require 'nvim-treesitter.configs'
+	--nvim_treesitter_config.setup {
+	--	--highlight = { enable = true },
+	--	ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
+	--	--incremental_selection = {
+	--	--	enable = true,
+	--	--	keymaps = {
+	--	--		init_selection = "gnn", -- set to `false` to disable one of the mappings
+	--	--		node_incremental = "grn",
+	--	--		scope_incremental = "grc",
+	--	--		node_decremental = "grm",
+	--	--	},
+	--	--},
+	--}
 
 	-- Global mappings.
 	-- See `:help vim.diagnostic.*` for documentation on any of the below functions
