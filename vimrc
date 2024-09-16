@@ -50,6 +50,8 @@ Plug 'morhetz/gruvbox'
 Plug 'mbbill/undotree'
 
 if has('nvim')
+	Plug 'williamboman/mason.nvim'
+	Plug 'williamboman/mason-lspconfig.nvim'
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'ms-jpq/coq_nvim', {'branch': 'coq', 'do': ':COQdeps'}
 endif
@@ -129,6 +131,8 @@ if has('nvim')
 	let g:coq_settings = {'auto_start': 'shut-up'}
 
 lua << EOF
+	require("mason").setup()
+
 	local lsp = require 'lspconfig'
 
 	lsp.vimls.setup{}
