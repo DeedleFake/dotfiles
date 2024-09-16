@@ -132,29 +132,16 @@ if has('nvim')
 
 lua << EOF
 	require("mason").setup()
+	require("mason-lspconfig").setup()
+	require("mason-lspconfig").setup_handlers {
+		function(server_name)
+			require("lspconfig")[server_name].setup {}
+		end,
 
-	local lsp = require 'lspconfig'
-
-	lsp.vimls.setup{}
-
-	lsp.gopls.setup{}
-	lsp.ruby_lsp.setup{}
-	--lsp.sorbet.setup{
-	--	cmd = {"bundle", "exec", "srb", "tc", "--lsp"};
-	--}
-	lsp.dartls.setup{}
-	lsp.rust_analyzer.setup{}
-	lsp.zls.setup{}
-	lsp.gleam.setup{}
-
-	lsp.graphql.setup{}
-
-	lsp.html.setup{}
-	--lsp.css.setup{}
-	lsp.eslint.setup{}
-	lsp.svelte.setup{}
-	lsp.elixirls.setup{
-		cmd = {"/usr/lib/elixir-ls/language_server.sh"};
+		-- Example of manual configuration for a specific server:
+		-- ["example_server"] = function()
+		-- 	require("lspconfig").example_server.setup {}
+		-- end,
 	}
 
 	--local nvim_treesitter_config = require 'nvim-treesitter.configs'
