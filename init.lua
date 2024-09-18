@@ -1,7 +1,8 @@
-vim.call('plug#begin')
-require('plug')
-vim.call('plug#end')
+require('lazy_load')
 
 if vim.env['TERM'] == 'screen' then
 	vim.env['TERM'] = 'xterm-256'
 end
+
+require('set')
+require('autocmds')

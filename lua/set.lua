@@ -18,6 +18,22 @@ vim.opt.relativenumber = true
 
 vim.cmd('colorscheme seoul256')
 
+vim.g.instant_markdown_autostart = 0
+
+vim.g.jsdoc_enable_es6 = 1
+
+vim.g.enable_bold_font = 1
+vim.g.enable_italic_font = 1
+
+vim.keymap.set('n', '<F8>', '<cmd>IndentGuidesToggle<cr>')
+
+vim.keymap.set('n', 'J', '')
+
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
 if not vim.fn.has('win32') then
 	vim.opt.shell = 'bash'
 end
