@@ -4,6 +4,7 @@ return {
 	{'tpope/vim-fugitive'},
 	{
 		'vim-airline/vim-airline',
+		dependencies = {'vim-airline/vim-airline-themes'},
 		init = function()
 			vim.g.airline_theme = "deus"
 			--vim.g.airline_powerline_fonts = 2
@@ -87,7 +88,6 @@ return {
 		},
 		config = function()
 			local cmp = require('cmp')
-
 			cmp.setup {
 				mapping = cmp.mapping.preset.insert {
 					['<C-b>'] = cmp.mapping.scroll_docs(-4),
