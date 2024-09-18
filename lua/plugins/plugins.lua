@@ -100,6 +100,8 @@ return {
 					['<CR>'] = cmp.mapping.confirm { select = false },
 					['<C-j>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
 					['<C-k>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
+					['<Tab>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
+					['<S-Tab>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
 				},
 
 				sources = cmp.config.sources({
