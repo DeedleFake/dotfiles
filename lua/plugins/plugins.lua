@@ -1,7 +1,6 @@
 return {
 	{'tpope/vim-sensible'},
 
-	{'tpope/vim-fugitive'},
 	{
 		'vim-airline/vim-airline',
 		dependencies = {'vim-airline/vim-airline-themes'},
@@ -11,7 +10,8 @@ return {
 		end,
 	},
 	{'vim-airline/vim-airline-themes'},
-	{'easymotion/vim-easymotion'},
+
+	{'easymotion/vim-easymotion', keys = {'<leader><leader>'}},
 
 	{
 		'junegunn/fzf',
@@ -53,17 +53,20 @@ return {
 
 	{
 		'neovim/nvim-lspconfig',
+		--cmd = {'LspInfo', 'LspStart', 'LspRestart', 'LspStop', 'LspLog'},
 		dependencies = {
 			'williamboman/mason.nvim',
 			'williamboman/mason-lspconfig.nvim',
 		},
 	},
-	{'williamboman/mason.nvim'},
+	{'williamboman/mason.nvim', cmd = 'Mason'},
 	{
 		'williamboman/mason-lspconfig.nvim',
+		lazy = true,
 		dependencies = {'neovim/nvim-lspconfig'},
 		config = function()
 			require('mason').setup {}
+			require("mason-lspconfig").setup {}
 			require("mason-lspconfig").setup_handlers {
 				function(server_name)
 					require("lspconfig")[server_name].setup {}
@@ -95,8 +98,8 @@ return {
 					['<C-Space>'] = cmp.mapping.complete(),
 					['<C-c>'] = cmp.mapping.abort(),
 					['<CR>'] = cmp.mapping.confirm { select = false },
-					['<Tab>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
-					['<S-Tab>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
+					['<C-j>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
+					['<C-k>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
 				},
 
 				sources = cmp.config.sources({
@@ -107,8 +110,12 @@ return {
 			}
 		end,
 	},
-	{'hrsh7th/cmp-nvim-lsp'},
-	{'hrsh7th/cmp-buffer'},
-	{'hrsh7th/cmp-path'},
-	{'hrsh7th/cmp-cmdline'},
+	{
+		'hrsh7th/cmp-nvim-lsp',
+		lazy = true,
+		dependencies = {'neovim/nvim-lspconfig'},
+	},
+	{'hrsh7th/cmp-buffer', lazy = true},
+	{'hrsh7th/cmp-path', lazy = true},
+	{'hrsh7th/cmp-cmdline', lazy = true},
 }
