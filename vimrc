@@ -15,7 +15,6 @@ Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 Plug 'Shougo/vimproc.vim', {'do': ':VimProcInstall' }
 
 " Syntaxes and Filetypes
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'} ", 'tag': '*'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
@@ -50,10 +49,16 @@ Plug 'morhetz/gruvbox'
 Plug 'mbbill/undotree'
 
 if has('nvim')
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'williamboman/mason.nvim', {'do': ':MasonUpdate'}
 	Plug 'williamboman/mason-lspconfig.nvim'
 	Plug 'neovim/nvim-lspconfig'
-	Plug 'ms-jpq/coq_nvim', {'branch': 'coq', 'do': ':COQdeps'}
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'hrsh7th/cmp-nvim-lsp'
+	Plug 'hrsh7th/cmp-buffer'
+	Plug 'hrsh7th/cmp-path'
+	Plug 'hrsh7th/cmp-cmdline'
+	Plug 'hrsh7th/nvim-cmp'
 endif
 
 call plug#end()
@@ -128,8 +133,6 @@ if $TERM == "screen"
 endif
 
 if has('nvim')
-	let g:coq_settings = {'auto_start': 'shut-up'}
-
 lua << EOF
 	require("mason").setup()
 	require("mason-lspconfig").setup()
@@ -203,6 +206,22 @@ lua << EOF
 			end, opts)
 		end,
 	})
+
+	local cmp = require('cmp')
+	cmp.setup {
+		mapping = cmp.mapping.preset.insert {
+			['<C-b>'] = cmp.mapping.scroll_docs(-4),
+			['<C-f>'] = cmp.mapping.scroll_docs(4),
+			['<C-Space>'] = cmp.mapping.complete(),
+			['<C-e>'] = cmp.mapping.abort(),
+			['<CR>'] = cmp.mapping.confirm({ select = true }),
+		},
+		sources = cmp.config.sources({
+			{ name = 'nvim_lsp' },
+		}, {
+			{ name = 'buffer' },
+		})
+	}
 EOF
 endif
 
