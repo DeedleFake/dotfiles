@@ -15,7 +15,7 @@ Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 Plug 'Shougo/vimproc.vim', {'do': ':VimProcInstall' }
 
 " Syntaxes and Filetypes
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'} ", 'tag': '*'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
@@ -50,7 +50,7 @@ Plug 'morhetz/gruvbox'
 Plug 'mbbill/undotree'
 
 if has('nvim')
-	Plug 'williamboman/mason.nvim'
+	Plug 'williamboman/mason.nvim', {'do': ':MasonUpdate'}
 	Plug 'williamboman/mason-lspconfig.nvim'
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'ms-jpq/coq_nvim', {'branch': 'coq', 'do': ':COQdeps'}
@@ -144,20 +144,19 @@ lua << EOF
 		-- end,
 	}
 
-	--local nvim_treesitter_config = require 'nvim-treesitter.configs'
-	--nvim_treesitter_config.setup {
-	--	--highlight = { enable = true },
-	--	ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
-	--	--incremental_selection = {
-	--	--	enable = true,
-	--	--	keymaps = {
-	--	--		init_selection = "gnn", -- set to `false` to disable one of the mappings
-	--	--		node_incremental = "grn",
-	--	--		scope_incremental = "grc",
-	--	--		node_decremental = "grm",
-	--	--	},
-	--	--},
-	--}
+	require('nvim-treesitter.configs').setup {
+		highlight = { enable = true },
+		ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
+		--incremental_selection = {
+		--	enable = true,
+		--	keymaps = {
+		--		init_selection = "gnn", -- set to `false` to disable one of the mappings
+		--		node_incremental = "grn",
+		--		scope_incremental = "grc",
+		--		node_decremental = "grm",
+		--	},
+		--},
+	}
 
 	-- Global mappings.
 	-- See `:help vim.diagnostic.*` for documentation on any of the below functions
