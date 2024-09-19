@@ -25,7 +25,7 @@ vim.g.jsdoc_enable_es6 = 1
 vim.g.enable_bold_font = 1
 vim.g.enable_italic_font = 1
 
-vim.keymap.set('n', '<F8>', '<cmd>IndentGuidesToggle<cr>')
+--vim.keymap.set('n', '<F8>', '<cmd>IndentGuidesToggle<cr>')
 
 vim.keymap.set('n', 'J', '')
 

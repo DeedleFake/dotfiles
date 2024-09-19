@@ -3,7 +3,7 @@ return {
 		'fatih/vim-go',
 		build = ':GoUpdateBinaries',
 		ft = {'go', 'gomod', 'gosum', 'gohtmltmpl'},
-		keys = {{'<F7>', '<cmd>GoCoverageToggle<cr>'}},
+		keys = {{'<leader>`', '<cmd>GoCoverageToggle<cr>'}},
 		init = function()
 			vim.g.go_fmt_command = 'goimports'
 			--vim.g.go_fmt_options '-s'

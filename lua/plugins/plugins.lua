@@ -64,7 +64,7 @@ return {
 			'williamboman/mason-lspconfig.nvim',
 		},
 	},
-	{'williamboman/mason.nvim', cmd = 'Mason'},
+	{'williamboman/mason.nvim', cmd = 'Mason', keys = {{'<F7>', '<cmd>Mason<cr>'}}},
 	{
 		'williamboman/mason-lspconfig.nvim',
 		lazy = true,
