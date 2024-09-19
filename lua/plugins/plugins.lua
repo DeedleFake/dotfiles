@@ -22,6 +22,7 @@ return {
 		'ibhagwan/fzf-lua',
 		--dependencies = {'junegunn/fzf'},
 		keys = {{'<leader>t', function() require('fzf-lua').files() end}},
+		opts = {'fzf-vim'},
 	},
 
 	{
