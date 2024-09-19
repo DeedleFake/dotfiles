@@ -13,11 +13,15 @@ return {
 
 	{'easymotion/vim-easymotion', keys = {'<leader><leader>'}},
 
+	--{
+	--	'junegunn/fzf',
+	--	cmd = {'FZF'},
+	--	build = function() vim.call('fzf#install') end,
+	--},
 	{
-		'junegunn/fzf',
-		cmd = {'FZF'},
-		keys = {{'<leader>t', '<cmd>FZF<cr>'}},
-		config = function() vim.call('fzf#install') end,
+		'ibhagwan/fzf-lua',
+		--dependencies = {'junegunn/fzf'},
+		keys = {{'<leader>t', function() require('fzf-lua').files() end}},
 	},
 
 	{
