@@ -96,6 +96,8 @@ return {
 		config = function()
 			local cmp = require('cmp')
 			cmp.setup {
+				preselect = cmp.PreselectMode.None,
+
 				mapping = cmp.mapping.preset.insert {
 					['<C-b>'] = cmp.mapping.scroll_docs(-4),
 					['<C-f>'] = cmp.mapping.scroll_docs(4),
