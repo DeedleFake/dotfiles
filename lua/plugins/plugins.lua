@@ -58,7 +58,8 @@ return {
 
 	{
 		'neovim/nvim-lspconfig',
-		--cmd = {'LspInfo', 'LspStart', 'LspRestart', 'LspStop', 'LspLog'},
+		cmd = {'LspInfo', 'LspStart', 'LspRestart', 'LspStop', 'LspLog'},
+		event = {'BufNewFile', 'BufReadPre', 'FilterReadPre', 'FileReadPre'},
 		dependencies = {
 			'williamboman/mason.nvim',
 			'williamboman/mason-lspconfig.nvim',
