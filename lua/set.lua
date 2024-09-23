@@ -41,7 +41,7 @@ end
 if vim.fn.has('gui_running') ~= 0 then
 	vim.opt.lines = 40
 	vim.opt.columns = 80
-	vim.opt.guioptions:remove {'m', 'T'}
+	vim.opt.guioptions:remove { 'm', 'T' }
 	--colorscheme vividchalk
 	--colorscheme vim-material
 

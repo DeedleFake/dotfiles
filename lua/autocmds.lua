@@ -29,13 +29,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 vim.api.nvim_create_autocmd('BufReadPost', {
 	callback = function(ev)
-		vim.opt_local.fo:remove {'r', 'o', 'c'}
+		vim.opt_local.fo:remove { 'r', 'o', 'c' }
 	end,
 })
 
 vim.api.nvim_create_autocmd('FileType', {
 	callback = function(ev)
-		vim.opt_local.fo:remove {'r', 'o', 'c'}
+		vim.opt_local.fo:remove { 'r', 'o', 'c' }
 	end,
 })
 
@@ -58,7 +58,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-	pattern = {'text', 'markdown'},
+	pattern = { 'text', 'markdown' },
 	callback = function(ev)
 		vim.opt_local.spell = true
 	end,

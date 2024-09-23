@@ -1,17 +1,17 @@
 return {
-	{'tpope/vim-sensible'},
+	{ 'tpope/vim-sensible' },
 
 	{
 		'vim-airline/vim-airline',
-		dependencies = {'vim-airline/vim-airline-themes'},
+		dependencies = { 'vim-airline/vim-airline-themes' },
 		init = function()
 			vim.g.airline_theme = "deus"
 			--vim.g.airline_powerline_fonts = 2
 		end,
 	},
-	{'vim-airline/vim-airline-themes'},
+	{ 'vim-airline/vim-airline-themes' },
 
-	{'easymotion/vim-easymotion', keys = {'<leader><leader>'}},
+	{ 'easymotion/vim-easymotion',     keys = { '<leader><leader>' } },
 
 	--{
 	--	'junegunn/fzf',
@@ -21,14 +21,14 @@ return {
 	{
 		'ibhagwan/fzf-lua',
 		--dependencies = {'junegunn/fzf'},
-		keys = {{'<leader>t', function() require('fzf-lua').files() end}},
-		opts = {'fzf-vim'},
+		keys = { { '<leader>t', function() require('fzf-lua').files() end } },
+		opts = { 'fzf-vim' },
 	},
 
 	{
 		'mbbill/undotree',
-		cmd = {'UndotreeToggle'},
-		keys = {{'<F6>', '<cmd>UndotreeToggle<cr>'}},
+		cmd = { 'UndotreeToggle' },
+		keys = { { '<F6>', '<cmd>UndotreeToggle<cr>' } },
 	},
 
 	{
@@ -62,8 +62,8 @@ return {
 
 	{
 		'neovim/nvim-lspconfig',
-		cmd = {'LspInfo', 'LspStart', 'LspRestart', 'LspStop', 'LspLog'},
-		event = {'BufNewFile', 'BufReadPre', 'FilterReadPre', 'FileReadPre'},
+		cmd = { 'LspInfo', 'LspStart', 'LspRestart', 'LspStop', 'LspLog' },
+		event = { 'BufNewFile', 'BufReadPre', 'FilterReadPre', 'FileReadPre' },
 		dependencies = {
 			'williamboman/mason.nvim',
 			'williamboman/mason-lspconfig.nvim',
@@ -71,20 +71,32 @@ return {
 	},
 	{
 		'williamboman/mason.nvim',
-		dependencies = {'williamboman/mason-lspconfig.nvim'},
-		cmd = {'Mason'},
-		keys = {{'<F7>', '<cmd>Mason<cr>'}},
+		dependencies = { 'williamboman/mason-lspconfig.nvim' },
+		cmd = { 'Mason' },
+		keys = { { '<F7>', '<cmd>Mason<cr>' } },
 	},
 	{
 		'williamboman/mason-lspconfig.nvim',
 		lazy = true,
-		dependencies = {'neovim/nvim-lspconfig'},
+		dependencies = { 'neovim/nvim-lspconfig' },
 		config = function()
 			require('mason').setup {}
 			require("mason-lspconfig").setup {}
 			require("mason-lspconfig").setup_handlers {
 				function(server_name)
 					require("lspconfig")[server_name].setup {}
+				end,
+
+				lua_ls = function()
+					require('lspconfig').lua_ls.setup {
+						settings = {
+							Lua = {
+								diagnostics = {
+									globals = { 'vim' }
+								}
+							}
+						}
+					}
 				end,
 
 				-- Example of manual configuration for a specific server:
@@ -132,9 +144,9 @@ return {
 	{
 		'hrsh7th/cmp-nvim-lsp',
 		lazy = true,
-		dependencies = {'neovim/nvim-lspconfig'},
+		dependencies = { 'neovim/nvim-lspconfig' },
 	},
-	{'hrsh7th/cmp-buffer', lazy = true},
-	{'hrsh7th/cmp-path', lazy = true},
-	{'hrsh7th/cmp-cmdline', lazy = true},
+	{ 'hrsh7th/cmp-buffer',  lazy = true },
+	{ 'hrsh7th/cmp-path',    lazy = true },
+	{ 'hrsh7th/cmp-cmdline', lazy = true },
 }
