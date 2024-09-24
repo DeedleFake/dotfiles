@@ -1,9 +1,13 @@
 return {
 	{
 		'fatih/vim-go',
-		build = ':GoUpdateBinaries',
 		ft = { 'go', 'gomod', 'gosum', 'gohtmltmpl' },
+		cmd = { 'GoCoverageToggle', 'GoInstallBinaries', 'GoUpdateBinaries' },
 		keys = { { '<leader>`', '<cmd>GoCoverageToggle<cr>' } },
+		build = function()
+			vim.cmd('GoInstallBinaries')
+			vim.cmd('GoUpdateBinaries')
+		end,
 		init = function()
 			vim.g.go_fmt_command = 'goimports'
 			--vim.g.go_fmt_options '-s'
