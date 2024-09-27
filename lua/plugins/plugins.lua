@@ -34,8 +34,8 @@ return {
 	{
 		'nvim-treesitter/nvim-treesitter',
 		build = function()
-			vim.cmd('TSInstallSync all')
-			vim.cmd('TSUpdateSync all')
+			vim.cmd('TSInstall all')
+			vim.cmd('TSUpdate all')
 		end,
 		opts = {
 			ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
