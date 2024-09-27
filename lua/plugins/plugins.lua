@@ -61,6 +61,22 @@ return {
 	},
 
 	{
+		'mhartington/formatter.nvim',
+		cmd = { 'Format', 'FormatWrite' },
+		dependencies = {
+			'williamboman/mason.nvim',
+			'williamboman/mason-lspconfig.nvim',
+		},
+		config = function()
+			require('formatter').setup {
+				filetype = {
+					markdown = { require('formatter.filetypes.markdown').prettier },
+				},
+			}
+		end,
+	},
+
+	{
 		'neovim/nvim-lspconfig',
 		cmd = { 'LspInfo', 'LspStart', 'LspRestart', 'LspStop', 'LspLog' },
 		event = { 'BufNewFile', 'BufReadPre', 'FilterReadPre', 'FileReadPre' },
