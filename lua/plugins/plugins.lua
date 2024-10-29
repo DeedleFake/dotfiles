@@ -132,6 +132,15 @@ return {
 					}
 				end,
 
+				html = function()
+					local capabilities = vim.lsp.protocol.make_client_capabilities()
+					capabilities.textDocument.completion.completionItem.snippetSupport = true
+					require 'lspconfig'.html.setup {
+						capabilities = capabilities,
+						filetypes = { 'html', 'eruby', 'svelte', 'templ' },
+					}
+				end,
+
 				-- Example of manual configuration for a specific server:
 				-- ["example_server"] = function()
 				-- 	require("lspconfig").example_server.setup {}
