@@ -71,6 +71,15 @@ return {
 			require('formatter').setup {
 				filetype = {
 					markdown = { require('formatter.filetypes.markdown').prettier },
+					eruby = {
+						function()
+							local config = require('formatter.filetypes.eruby').erbformatter()
+							config.exe = 'erb-format'
+							return config
+						end,
+					},
+					html = { require('formatter.filetypes.html').prettier },
+					css = { require('formatter.filetypes.css').prettier },
 				},
 			}
 		end,
@@ -112,6 +121,14 @@ return {
 								}
 							}
 						}
+					}
+				end,
+
+				cssls = function()
+					local capabilities = vim.lsp.protocol.make_client_capabilities()
+					capabilities.textDocument.completion.completionItem.snippetSupport = true
+					require 'lspconfig'.cssls.setup {
+						capabilities = capabilities,
 					}
 				end,
 
