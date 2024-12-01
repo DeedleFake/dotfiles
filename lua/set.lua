@@ -1,5 +1,7 @@
 vim.cmd('runtime! plugin/sensible.vim')
 
+require('seoul256')
+
 vim.cmd('filetype plugin indent on')
 vim.cmd('syntax on')
 
@@ -15,8 +17,6 @@ vim.opt.hlsearch = true
 vim.opt.ttimeout = false
 vim.opt.encoding = 'utf-8'
 vim.opt.relativenumber = true
-
-vim.cmd('colorscheme seoul256')
 
 vim.g.instant_markdown_autostart = 0
 
