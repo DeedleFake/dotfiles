@@ -1,6 +1,6 @@
 vim.cmd('runtime! plugin/sensible.vim')
 
-require('seoul256')
+vim.cmd('colorscheme seoul256')
 
 vim.cmd('filetype plugin indent on')
 vim.cmd('syntax on')

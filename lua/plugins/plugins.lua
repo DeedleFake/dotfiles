@@ -1,26 +1,36 @@
 return {
 	{ 'tpope/vim-sensible' },
 
-	{
-		'vim-airline/vim-airline',
-		dependencies = { 'vim-airline/vim-airline-themes' },
-		init = function()
-			vim.g.airline_theme = "deus"
-			--vim.g.airline_powerline_fonts = 2
-		end,
-	},
-	{ 'vim-airline/vim-airline-themes' },
-
-	{ 'easymotion/vim-easymotion',     keys = { '<leader><leader>' } },
-
 	--{
-	--	'junegunn/fzf',
-	--	cmd = {'FZF'},
-	--	build = function() vim.call('fzf#install') end,
+	--	'vim-airline/vim-airline',
+	--	dependencies = { 'vim-airline/vim-airline-themes' },
+	--	init = function()
+	--		vim.g.airline_theme = "deus"
+	--		--vim.g.airline_powerline_fonts = 2
+	--	end,
 	--},
+	--{ 'vim-airline/vim-airline-themes' },
+	{
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		opts = {
+			options = { theme = 'auto' },
+			sections = {
+				lualine_b = { 'branch', 'diff', {
+					'diagnostics',
+					sources = { 'nvim_lsp', 'nvim_diagnostic' },
+					update_in_insert = true,
+					always_visible = true,
+				} },
+			},
+		},
+	},
+
+	{ 'easymotion/vim-easymotion', keys = { '<leader><leader>' } },
+
 	{
 		'ibhagwan/fzf-lua',
-		--dependencies = {'junegunn/fzf'},
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
 		keys = { { '<leader>t', function() require('fzf-lua').files() end } },
 		opts = { 'fzf-vim' },
 	},
