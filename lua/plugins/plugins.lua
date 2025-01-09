@@ -70,30 +70,30 @@ return {
 		},
 	},
 
-	{
-		'mhartington/formatter.nvim',
-		cmd = { 'Format', 'FormatWrite' },
-		dependencies = {
-			'williamboman/mason.nvim',
-			'williamboman/mason-lspconfig.nvim',
-		},
-		config = function()
-			require('formatter').setup {
-				filetype = {
-					markdown = { require('formatter.filetypes.markdown').prettier },
-					eruby = {
-						function()
-							local config = require('formatter.filetypes.eruby').erbformatter()
-							config.exe = 'erb-format'
-							return config
-						end,
-					},
-					html = { require('formatter.filetypes.html').prettier },
-					css = { require('formatter.filetypes.css').prettier },
-				},
-			}
-		end,
-	},
+	--{
+	--	'mhartington/formatter.nvim',
+	--	cmd = { 'Format', 'FormatWrite' },
+	--	dependencies = {
+	--		'williamboman/mason.nvim',
+	--		'williamboman/mason-lspconfig.nvim',
+	--	},
+	--	config = function()
+	--		require('formatter').setup {
+	--			filetype = {
+	--				markdown = { require('formatter.filetypes.markdown').prettier },
+	--				eruby = {
+	--					function()
+	--						local config = require('formatter.filetypes.eruby').erbformatter()
+	--						config.exe = 'erb-format'
+	--						return config
+	--					end,
+	--				},
+	--				html = { require('formatter.filetypes.html').prettier },
+	--				css = { require('formatter.filetypes.css').prettier },
+	--			},
+	--		}
+	--	end,
+	--},
 
 	{
 		'neovim/nvim-lspconfig',
