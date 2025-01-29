@@ -105,6 +105,13 @@ return {
 			'williamboman/mason.nvim',
 			'williamboman/mason-lspconfig.nvim',
 		},
+		config = function()
+			require('lspconfig').roc_ls.setup {
+				cmd = { "roc_language_server" },
+				filetypes = { "roc" },
+				single_file_support = true,
+			}
+		end,
 	},
 	{
 		'williamboman/mason.nvim',
