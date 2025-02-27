@@ -221,7 +221,7 @@ if [ -x "$(which fzf)" ]; then
 	source <(fzf --zsh)
 fi
 
-FZF_DEFAULT_OPTS=(
+export FZF_DEFAULT_OPTS=(
 	--tmux
 	--border
 	--margin=1
@@ -229,7 +229,7 @@ FZF_DEFAULT_OPTS=(
 	--info=inline
 )
 if [ -x "$(which bat)" ]; then
-	FZF_DEFAULT_OPTS+=(
+	export FZF_CTRL_T_OPTS=(
 		--preview=\"bat -pp --color=always {}\"
 	)
 fi
