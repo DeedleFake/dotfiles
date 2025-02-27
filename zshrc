@@ -229,9 +229,9 @@ FZF_DEFAULT_OPTS=(
 	--info=inline
 
 	# tmux overrides
-	--tmux=center,80%,border-native
-	--margin=0
-	--border=none
+	# --tmux=center,80%,border-native
+	# --margin=0
+	# --border=none
 )
 
 fzf_preview="$(dirname "$0")/scripts/fzf-preview"
