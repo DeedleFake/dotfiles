@@ -225,6 +225,8 @@ FZF_DEFAULT_OPTS=(
 	--tmux
 	--border
 	--margin=1
+	--layout=reverse
+	--info=inline
 )
 if [ -x "$(which bat)" ]; then
 	FZF_DEFAULT_OPTS+=(
