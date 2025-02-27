@@ -216,3 +216,8 @@ fi
 if [ -r "/usr/share/nvm/init-nvm.sh" ]; then
 	source /usr/share/nvm/init-nvm.sh
 fi
+
+if [ -x "$(which fzf)" ]; then
+	export FZF_DEFAULT_OPTS="--layout reverse --tmux --border --margin 1"
+	source <(fzf --zsh)
+fi
