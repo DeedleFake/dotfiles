@@ -221,16 +221,21 @@ if [ -x "$(which fzf)" ]; then
 	source <(fzf --zsh)
 fi
 
-export FZF_DEFAULT_OPTS=(
-	--tmux
+FZF_DEFAULT_OPTS=(
+	--tmux=center,80%,border-native
+	--height=80%
+	--margin=5%
 	--border
-	--margin=1
 	--layout=reverse
 	--info=inline
 )
-if [ -x "$(which bat)" ]; then
-	export FZF_CTRL_T_OPTS=(
-		--preview=\"bat -pp --color=always {}\"
+
+fzf_preview="$(dirname "$0")/scripts/fzf-preview"
+if [ -x "$fzf_preview" ]; then
+	FZF_DEFAULT_OPTS+=(
+		--preview=\"$fzf_preview {}\"
+		--preview-window=down
 	)
 fi
+
 export FZF_DEFAULT_OPTS

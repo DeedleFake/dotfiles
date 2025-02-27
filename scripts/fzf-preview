@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+
+_ls() {
+	if [ "$FZF_PREVIEW_COLUMNS" -ge 80 ]; then
+		exec ls --color=always -l "$1"
+	else
+		exec ls --color=always "$1"
+	fi
+}
+
+if [ -f "$1" ]; then
+	exec bat --color=always -pp "$1"
+elif [ -e "$1" ]; then
+	_ls "$1"
+else
+	echo -n "No preview available."
+fi
