@@ -222,12 +222,16 @@ if [ -x "$(which fzf)" ]; then
 fi
 
 FZF_DEFAULT_OPTS=(
-	--tmux=center,80%,border-native
 	--height=80%
 	--margin=5%
 	--border
 	--layout=reverse
 	--info=inline
+
+	# tmux overrides
+	--tmux=center,80%,border-native
+	--margin=0
+	--border=none
 )
 
 fzf_preview="$(dirname "$0")/scripts/fzf-preview"
