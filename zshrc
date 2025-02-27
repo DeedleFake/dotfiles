@@ -218,6 +218,17 @@ if [ -r "/usr/share/nvm/init-nvm.sh" ]; then
 fi
 
 if [ -x "$(which fzf)" ]; then
-	export FZF_DEFAULT_OPTS="--layout reverse --tmux --border --margin 1"
 	source <(fzf --zsh)
 fi
+
+FZF_DEFAULT_OPTS=(
+	--tmux
+	--border
+	--margin=1
+)
+if [ -x "$(which bat)" ]; then
+	FZF_DEFAULT_OPTS+=(
+		--preview=\"bat -pp --color=always {}\"
+	)
+fi
+export FZF_DEFAULT_OPTS
