@@ -1,8 +1,3 @@
-set fish_greeting ''
-
-set -g fish_history_size 10000                    # Equivalent to HISTSIZE and SAVEHIST
-# set -g fish_wordchars '^[a-zA-Z0-9]'              # Adjust word characters (removing /, -, ., _, etc.)
-
 # Fish doesn't have direct equivalents for all ZSH setopts, but some behaviors are default:
 # - Extended globbing: Enabled by default with ** and *
 # - Numeric glob sort: Default behavior
