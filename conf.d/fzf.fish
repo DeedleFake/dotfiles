@@ -2,7 +2,7 @@ if type -q fzf
   fzf --fish | source
 end
 
-set -x FZF_DEFAULT_OPTS "--height=80% --margin=5% --border --layout=reverse --info=inline"
+set FZF_DEFAULT_OPTS "--height=80% --margin=5% --border --layout=reverse --info=inline"
 
 set fzf_preview "$(status dirname)/../scripts/fzf-preview"
 if test -x "$fzf_preview"
