@@ -8,7 +8,8 @@ if type -q powerline-go
 			-git-mode compact \
 			-mode compatible \
 			-modules user,host,ssh,cwd,perms,git,jobs,root \
-			-shell bare
+			-shell bare \
+			-theme "$(status dirname)/../misc/powerline.json"
 	end
 
 	function fish_right_prompt
@@ -18,6 +19,7 @@ if type -q powerline-go
 			-error $status \
 			-numeric-exit-codes \
 			-duration-low-precision \
-			-shell bare
+			-shell bare \
+			-theme "$(status dirname)/../misc/powerline.json"
 	end
 end
