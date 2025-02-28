@@ -1,3 +1,5 @@
+if not status is-interactive; exit; end
+
 if type -q powerline-go
 	function fish_prompt
 		powerline-go \

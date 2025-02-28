@@ -1,3 +1,5 @@
+if not status is-interactive; exit; end
+
 if type -q fzf
   fzf --fish | source
 end
