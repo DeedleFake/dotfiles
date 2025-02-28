@@ -75,15 +75,9 @@ end
 
 # Terminal Title
 function fish_title
-    # Simplified title: show current directory
     echo (prompt_pwd)
 end
 
 # LS Colors
 set -x LS_OPTIONS '--color=auto'
 alias ls "ls $LS_OPTIONS"
-
-# Prompt (Using powerlevel10k if available)
-if test -f /usr/share/fish/vendor_functions.d/powerlevel10k.fish
-    source /usr/share/fish/vendor_functions.d/powerlevel10k.fish
-end
