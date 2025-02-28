@@ -79,24 +79,11 @@ function fish_title
     echo (prompt_pwd)
 end
 
+# LS Colors
+set -x LS_OPTIONS '--color=auto'
+alias ls "ls $LS_OPTIONS"
+
 # Prompt (Using powerlevel10k if available)
 if test -f /usr/share/fish/vendor_functions.d/powerlevel10k.fish
     source /usr/share/fish/vendor_functions.d/powerlevel10k.fish
 end
-
-# FZF Integration
-if type -q fzf
-	fzf --fish | source
-end
-
-# FZF Options
-set -x FZF_DEFAULT_OPTS "--height=80% --margin=5% --border --layout=reverse --info=inline"
-# Add preview if script exists (adjust path as needed)
-set fzf_preview "~/scripts/fzf-preview"
-if test -x $fzf_preview
-    set -x FZF_DEFAULT_OPTS "$FZF_DEFAULT_OPTS --preview='$fzf_preview {}' --preview-window=down"
-end
-
-# LS Colors
-set -x LS_OPTIONS '--color=auto'
-alias ls "ls $LS_OPTIONS"

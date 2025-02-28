@@ -1,0 +1,17 @@
+#!/usr/bin/env fish
+
+function _ls -a path
+	if [ "$FZF_PREVIEW_COLUMNS" -ge 80 ]
+		exec ls --color=always -l "$path"
+	else
+		exec ls --color=always "$path"
+	end
+end
+
+if [ -f "$argv[1]" ]
+	exec bat --color=always -pp "$argv[1]"
+else if [ -e "$argv[1]" ]
+	_ls "$argv[1]"
+else
+	echo -n "No preview available."
+end
