@@ -1,6 +1,5 @@
-# Fish configuration based on the provided ZSH config for Manjaro
+set fish_greeting ''
 
-# Options
 set -g fish_history_size 10000                    # Equivalent to HISTSIZE and SAVEHIST
 # set -g fish_wordchars '^[a-zA-Z0-9]'              # Adjust word characters (removing /, -, ., _, etc.)
 
