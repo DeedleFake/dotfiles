@@ -1,4 +1,7 @@
+set -g fish_greeting # Removes the startup message.
+
 set -xp --path PATH "$HOME/.local/bin"
+set -x LESS -R
 
 if not status is-interactive; exit; end
 
