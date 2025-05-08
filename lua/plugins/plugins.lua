@@ -124,53 +124,40 @@ return {
 		lazy = true,
 		dependencies = { 'neovim/nvim-lspconfig' },
 		config = function()
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+			vim.lsp.config('lua_ls', {
+				settings = {
+					Lua = {
+						runtime = {
+							version = 'LuaJIT',
+						},
+						diagnostics = {
+							globals = {
+								'vim',
+								'require',
+							},
+						},
+					},
+				},
+			})
+
+			vim.lsp.config('ruby_lsp', {
+				cmd_env = { BUNDLE_GEMFILE = vim.fn.getenv('GLOBAL_GEMFILE') },
+			})
+
+			vim.lsp.config('cssls', {
+				capabilities = capabilities,
+			})
+
+			vim.lsp.config('html', {
+				capabilities = capabilities,
+				filetypes = { 'html', 'eruby', 'svelte', 'templ' },
+			})
+
 			require('mason').setup {}
 			require("mason-lspconfig").setup {}
-			-- require("mason-lspconfig").setup_handlers {
-			-- 	function(server_name)
-			-- 		require("lspconfig")[server_name].setup {}
-			-- 	end,
-
-			-- 	lua_ls = function()
-			-- 		require('lspconfig').lua_ls.setup {
-			-- 			settings = {
-			-- 				Lua = {
-			-- 					diagnostics = {
-			-- 						globals = { 'vim' },
-			-- 					},
-			-- 				},
-			-- 			},
-			-- 		}
-			-- 	end,
-
-			-- 	ruby_lsp = function()
-			-- 		require('lspconfig').ruby_lsp.setup {
-			-- 			cmd_env = { BUNDLE_GEMFILE = vim.fn.getenv('GLOBAL_GEMFILE') },
-			-- 		}
-			-- 	end,
-
-			-- 	cssls = function()
-			-- 		local capabilities = vim.lsp.protocol.make_client_capabilities()
-			-- 		capabilities.textDocument.completion.completionItem.snippetSupport = true
-			-- 		require 'lspconfig'.cssls.setup {
-			-- 			capabilities = capabilities,
-			-- 		}
-			-- 	end,
-
-			-- 	html = function()
-			-- 		local capabilities = vim.lsp.protocol.make_client_capabilities()
-			-- 		capabilities.textDocument.completion.completionItem.snippetSupport = true
-			-- 		require 'lspconfig'.html.setup {
-			-- 			capabilities = capabilities,
-			-- 			filetypes = { 'html', 'eruby', 'svelte', 'templ' },
-			-- 		}
-			-- 	end,
-
-			-- 	-- Example of manual configuration for a specific server:
-			-- 	-- ["example_server"] = function()
-			-- 	-- 	require("lspconfig").example_server.setup {}
-			-- 	-- end,
-			-- }
 		end,
 	},
 
