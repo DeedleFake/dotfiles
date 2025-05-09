@@ -126,6 +126,7 @@ return {
 		config = function()
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities.textDocument.completion.completionItem.snippetSupport = true
+			vim.lsp.config('*', { capabilities = capabilities })
 
 			vim.lsp.config('lua_ls', {
 				settings = {
@@ -147,14 +148,18 @@ return {
 				cmd_env = { BUNDLE_GEMFILE = vim.fn.getenv('GLOBAL_GEMFILE') },
 			})
 
-			vim.lsp.config('cssls', {
-				capabilities = capabilities,
-			})
+			do
+				local filetypes = vim.lsp.config.html.filetypes
+				table.insert(filetypes, 'eruby')
+				table.insert(filetypes, 'svelte')
+				vim.lsp.config('html', { filetypes = filetypes })
+			end
 
-			vim.lsp.config('html', {
-				capabilities = capabilities,
-				filetypes = { 'html', 'eruby', 'svelte', 'templ' },
-			})
+			do
+				local filetypes = vim.lsp.config.tailwindcss.filetypes
+				table.insert(filetypes, 'eruby')
+				vim.lsp.config('tailwindcss', { filetypes = filetypes })
+			end
 
 			require('mason').setup {}
 			require("mason-lspconfig").setup {}
