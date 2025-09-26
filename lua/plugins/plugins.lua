@@ -106,11 +106,11 @@ return {
 			'mason-org/mason-lspconfig.nvim',
 		},
 		config = function()
-			require('lspconfig').roc_ls.setup {
+			vim.lsp.config('roc_ls', {
 				cmd = { "roc_language_server" },
 				filetypes = { "roc" },
 				single_file_support = true,
-			}
+			})
 		end,
 	},
 	{
