@@ -1,4 +1,5 @@
 set -g fish_greeting # Removes the startup message.
+set -g fish_history_size 10000
 
 set -xp --path PATH "$HOME/.local/bin"
 set -x LESS -R
