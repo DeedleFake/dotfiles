@@ -1,3 +1,1 @@
-if test -d "$HOME/.cargo/bin"
-	set -xp --path PATH "$HOME/.cargo/bin"
-end
+fish_add_path "$HOME/.cargo/bin"
