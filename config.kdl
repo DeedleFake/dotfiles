@@ -8,7 +8,9 @@ input {
 		click-method "clickfinger"
 	}
 
-	mouse {}
+	mouse {
+		accel-profile "flat"
+	}
 
 	trackpoint {}
 }
