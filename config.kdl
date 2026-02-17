@@ -5,6 +5,7 @@ input {
 	}
 
 	touchpad {
+		dwt // Disable when typing.
 		click-method "clickfinger"
 	}
 
