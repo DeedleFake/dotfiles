@@ -235,7 +235,6 @@ binds {
 
 cursor {
 	xcursor-theme "plan9"
-	xcursor-size 48
 }
 
 // vim: ts=2 sw=2 noet
