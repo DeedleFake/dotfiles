@@ -234,4 +234,10 @@ cursor {
 	xcursor-theme "plan9"
 }
 
+gestures {
+	hot-corners {
+		off
+	}
+}
+
 // vim: ts=2 sw=2 noet
