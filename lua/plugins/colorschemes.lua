@@ -6,4 +6,5 @@ return {
 	{ 'hzchirs/vim-material',               lazy = true },
 	{ 'NLKNguyen/papercolor-theme',         lazy = true },
 	{ 'morhetz/gruvbox',                    lazy = true },
+	{ 'ember-theme/nvim',                   lazy = true },
 }

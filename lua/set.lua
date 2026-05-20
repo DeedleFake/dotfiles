@@ -1,6 +1,6 @@
 vim.cmd('runtime! plugin/sensible.vim')
 
-vim.cmd('colorscheme seoul256')
+vim.cmd('colorscheme ember-auto')
 
 vim.cmd('filetype plugin indent on')
 vim.cmd('syntax on')
