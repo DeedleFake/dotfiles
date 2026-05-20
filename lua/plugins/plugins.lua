@@ -148,6 +148,12 @@ return {
 				cmd_env = { BUNDLE_GEMFILE = vim.fn.getenv('GLOBAL_GEMFILE') },
 			})
 
+			vim.lsp.config('expert', {
+				cmd = { 'expert', '--stdio' },
+				root_markers = { 'mix.exs', '.git' },
+				filetypes = { 'elixir', 'eelixir', 'heex' },
+			})
+
 			do
 				local filetypes = vim.lsp.config.html.filetypes
 				table.insert(filetypes, 'eruby')
