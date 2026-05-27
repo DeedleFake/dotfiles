@@ -36,7 +36,7 @@ return {
 			vim.g['prettier#config#prose_wrap'] = 'preserve'
 		end,
 	},
-	{ 'pangloss/vim-javascript',     ft = { 'javscript', 'javascript.jsx' } },
+	{ 'pangloss/vim-javascript',     ft = { 'javascript', 'javascript.jsx' } },
 	{ 'mxw/vim-jsx',                 ft = 'javascript.jsx' },
 	{ 'DeedleFake/vim-wdte',         ft = 'wdte' },
 	{ 'jparise/vim-graphql',         ft = 'graphql' },
