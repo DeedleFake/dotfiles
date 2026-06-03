@@ -47,9 +47,7 @@ return {
 		branch = 'main',
 		build = ':TSUpdate',
 		config = function()
-			local treesitter = require('nvim-treesitter')
-			treesitter.setup {}
-			treesitter.install { "c", "lua", "vim", "vimdoc", "query" }
+			require('nvim-treesitter').install { "c", "lua", "vim", "vimdoc", "query" }
 		end,
 	},
 
