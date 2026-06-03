@@ -36,6 +36,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 vim.api.nvim_create_autocmd('FileType', {
 	callback = function(ev)
 		vim.opt_local.fo:remove { 'r', 'o', 'c' }
+		pcall(vim.treesitter.start, ev.buf)
 	end,
 })
 

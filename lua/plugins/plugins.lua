@@ -43,32 +43,13 @@ return {
 
 	{
 		'nvim-treesitter/nvim-treesitter',
-		build = function()
-			vim.cmd('TSInstall all')
-			vim.cmd('TSUpdate all')
-		end,
+		lazy = false,
+		branch = 'main',
+		build = ':TSUpdate',
 		config = function()
-			require('nvim-treesitter.configs').setup {
-				ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
-				auto_install = true,
-
-				highlight = {
-					enable = true,
-					additional_vim_regex_highlighting = false,
-				},
-
-				indent = { enable = false },
-
-				--incremental_selection = {
-				--	enable = true,
-				--	keymaps = {
-				--		init_selection = "gnn", -- set to `false` to disable one of the mappings
-				--		node_incremental = "grn",
-				--		scope_incremental = "grc",
-				--		node_decremental = "grm",
-				--	},
-				--},
-			}
+			local treesitter = require('nvim-treesitter')
+			treesitter.setup {}
+			treesitter.install { "c", "lua", "vim", "vimdoc", "query" }
 		end,
 	},
 
