@@ -1,0 +1,11 @@
+# Matches ~/.config/foot/foot.ini: font=Go Mono:size=8
+font-family = "Go Mono"
+font-size = 8
+
+# Matches foot [colors-dark] alpha=.9. Opacity applies to the default
+# background only, which is foot's default alpha-mode.
+background-opacity = 0.9
+
+# Fullscreen was ctrl+enter by default.
+keybind = ctrl+enter=unbind
+keybind = f11=toggle_fullscreen
