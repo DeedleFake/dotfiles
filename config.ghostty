@@ -9,3 +9,8 @@ background-opacity = 0.9
 # Fullscreen was ctrl+enter by default.
 keybind = ctrl+enter=unbind
 keybind = f11=toggle_fullscreen
+
+# GNOME's Ctrl+Alt+T shortcut joins the running process. Do not copy the
+# focused window's directory; start in $HOME instead.
+window-inherit-working-directory = false
+working-directory = home
