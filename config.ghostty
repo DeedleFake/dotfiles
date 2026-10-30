@@ -3,6 +3,9 @@ font-size = 8
 
 background-opacity = 0.9
 
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
 # Fullscreen was ctrl+enter by default.
 keybind = ctrl+enter=unbind
 keybind = f11=toggle_fullscreen
